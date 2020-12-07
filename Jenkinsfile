@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('pull') {
             steps {
-                sh 'git pull git@github.com:gangoll/cowsy.git || git clone  git@github.com:gangoll/ted-search.git .'
+                sh ' git pull https://github.com/gangoll/cowsy.git || git pull git@github.com:gangoll/cowsy.git || git clone  git@github.com:gangoll/cowsy.git .'
                 script {
                     commit=sh (script: "git log -1 | tail -1", returnStdout: true).trim()
                    
@@ -19,7 +19,7 @@ pipeline {
         }          
       
  
- 
+
 
         stage('build') { // new container to test
             steps {
