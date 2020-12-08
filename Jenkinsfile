@@ -70,12 +70,12 @@ pipeline {
                        sh "terraform destroy -auto-approve || true"
                        sh "terraform apply -auto-approve"
                         
-                     if ("${commit}" == "test"){
-                        sh '''
-                        sed -i "s/localhost:8080/$(head -1 to-replace)/g" test.sh
-                         ./test.sh
-                         '''
-                        }
+                    //  if ("${commit}" == "test"){
+                    //     sh '''
+                    //     sed -i "s/localhost:8080/$(head -1 to-replace)/g" test.sh
+                    //      ./test.sh
+                    //      '''
+                    //     }
                          }
         }
         }
