@@ -1,5 +1,5 @@
 #!/bin/sh
-
+npm install
 path=/src
 base=$pwd
 if [ ! -z $1 ] ;
