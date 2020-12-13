@@ -7,18 +7,18 @@ pipeline {
     stages {
         stage('pull') {
             steps {
-                sshagent (credentials: ['111']) {
+                // sshagent (credentials: ['111']) {
    
 
                 sh 'git init || true'
-                sh ' git pull git@github.com:gangoll/cowsy.git  || git clone https://github.com/gangoll/cowsy.git .'
+                sh ' git pull https://github.com/gangoll/cowsy.git  || git clone https://github.com/gangoll/cowsy.git .'
                 script {
                     commit=sh (script: "git log -1 | tail -1", returnStdout: true).trim()
                    
                 }
                 echo "${commit}"
                 
-            }
+            // }
         }
 
         }          
