@@ -8,7 +8,7 @@ pipeline {
         stage('pull') {
             steps {
                 sh 'git init || true'
-                sh ' git pull https://github.com/gangoll/cowsy.git  || git https://github.com/gangoll/cowsy.git .'
+                sh ' git pull https://github.com/gangoll/cowsy.git  || git clone https://github.com/gangoll/cowsy.git .'
                 script {
                     commit=sh (script: "git log -1 | tail -1", returnStdout: true).trim()
                    
@@ -16,7 +16,7 @@ pipeline {
                 echo "${commit}"
                 
             }
-            
+
         }          
       
  
