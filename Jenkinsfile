@@ -43,7 +43,7 @@ pipeline {
         stage('test') {
             
             steps { 
-                 
+                    catchError {
                     script{             //if script returns 1 the job will fail!!
                         echo "testing..."
                         sh "sleep 5"
@@ -53,7 +53,7 @@ pipeline {
                         echo "Result: ${RESULT}"
                      }
                  
-             }
+             }}
         }
         
         stage('deploy')
