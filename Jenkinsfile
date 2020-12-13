@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('pull') {
             steps {
-                withCredentials([sshUserPrivateKey(credentialsId: '111', keyFileVariable: 'SSH_KEY')]) {
+                sshagent (credentials: ['111']) {
    
 
                 sh 'git init || true'
