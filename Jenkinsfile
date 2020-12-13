@@ -7,6 +7,9 @@ pipeline {
     stages {
         stage('pull') {
             steps {
+                withCredentials([sshUserPrivateKey(credentialsId: '111', keyFileVariable: 'SSH_KEY')]) {
+   
+
                 sh 'git init || true'
                 sh ' git pull git@github.com:gangoll/cowsy.git  || git clone https://github.com/gangoll/cowsy.git .'
                 script {
@@ -16,6 +19,7 @@ pipeline {
                 echo "${commit}"
                 
             }
+        }
 
         }          
       
