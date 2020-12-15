@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('pull') {
             steps {
-                // sshagent (credentials: ['111']) {
+                
    
 
                 sh 'git init || true'
@@ -18,7 +18,7 @@ pipeline {
                 }
                 echo "${commit}"
                 
-            // }
+            
         }
 
         }          
