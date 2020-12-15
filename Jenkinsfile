@@ -67,7 +67,7 @@ pipeline {
         {
         
           script{     
-                   dir{"./cowsay"}       
+                   dir{'cowsay'}       
                         echo "depploying..."
                         sh "cp /tmp/access_code ."
                         sh "./rep.sh"
