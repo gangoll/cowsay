@@ -28,12 +28,12 @@ resource "aws_eip" "eip" {
   
   vpc      = true
 }
-resource "aws_s3_bucket" "src" {
-  bucket = "cowsay-src"
+resource "aws_s3_bucket" "src1" {
+  bucket = "cowsay-src1"
   acl    = "private"
 
   tags = {
-    Name        = "src"
+    Name        = "src1"
   }
 }
 
@@ -44,7 +44,7 @@ resource "aws_s3_bucket_object" "file_upload" {
   source = "./${each.value}"# its mean it depended on zip
   etag = filemd5( "./${each.value}")
   depends_on = [
-   aws_s3_bucket.src,
+   aws_s3_bucket.src1,
       ]
 }
 resource "aws_iam_role" "ec2" {

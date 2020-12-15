@@ -4,7 +4,7 @@ sudo apt update
 sudo apt install nodejs -y
 sudo apt install npm -y
 sudo snap install aws-cli --classic
-sudo aws s3 sync s3://cowsay-src /tmp/src
+sudo aws s3 sync s3://cowsay-src1 /tmp/src
 cd /tmp/src
 sudo apt install unzip
 sudo unzip src.zip 
