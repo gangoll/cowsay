@@ -3,6 +3,7 @@ provider "aws" {
   secret_key = "!"
   region  = "eu-central-1"
   
+  
 }
 
 resource "aws_vpc" "cowsay" {
