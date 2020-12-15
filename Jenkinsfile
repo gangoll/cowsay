@@ -69,8 +69,8 @@ pipeline {
           script{       
                      dir('cowsay')  {
                         echo "depploying..."
-                        // sh "cp /tmp/access_code ."
-                        sh "terraform init cowsay || true"
+                        sh "cp /tmp/access_code ."
+                        sh "terraform init || true"
                        sh "terraform destroy --auto-approve || true"
                        sh "terraform apply --auto-approve"
                         
@@ -80,8 +80,7 @@ pipeline {
                     //      ./test.sh
                     //      '''
                     //     }
-                         }
-          }
+                         }}
         }
         }
     }
