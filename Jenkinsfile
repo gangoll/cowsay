@@ -67,6 +67,7 @@ pipeline {
         {
         
           script{     
+              
                    dir{'cowsay'}       
                         echo "depploying..."
                         sh "cp /tmp/access_code ."
