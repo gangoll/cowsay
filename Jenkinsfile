@@ -40,21 +40,21 @@ pipeline {
                 }
             }
         
-        stage('test') {
+        // stage('test') {
             
-            steps { 
+        //     steps { 
                     
-                    script{             //if script returns 1 the job will fail!!
-                        echo "testing..."
-                        sh "sleep 15"
-                        sh 'chmod +x test.sh || true'
-                         RESULT=sh './test.sh'
-                        // RESULT=sh (script: './test.sh', returnStdout: true).trim()
+        //             script{             //if script returns 1 the job will fail!!
+        //                 echo "testing..."
+        //                 sh "sleep 15"
+        //                 sh 'chmod +x test.sh || true'
+        //                  RESULT=sh './test.sh'
+        //                 // RESULT=sh (script: './test.sh', returnStdout: true).trim()
                         
-                     }
+        //              }
                  
-             }
-        }
+        //      }
+        // }
         
         stage('deploy')
         {
