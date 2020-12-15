@@ -73,7 +73,7 @@ pipeline {
                         sh "cp /tmp/access_code ."
                         sh "./rep.sh"
                         sh "terraform init || true"
-                       sh "terraform destroy --auto-approve"
+                       sh "terraform destroy --auto-approve "
                        sh "terraform apply --auto-approve"
                         
                     }
