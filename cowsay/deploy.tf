@@ -39,7 +39,7 @@ resource "aws_s3_bucket" "src1" {
 
 resource "aws_s3_bucket_object" "file_upload" {
   for_each = fileset("./", "src.*")
-  bucket = "${aws_s3_bucket.src.id}"
+  bucket = "${aws_s3_bucket.src1.id}"
   key    = each.value
   source = "./${each.value}"# its mean it depended on zip
   etag = filemd5( "./${each.value}")
