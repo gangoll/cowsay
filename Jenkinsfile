@@ -96,7 +96,7 @@ pipeline {
                
                      mail to: 'gangoll1992@gmail.com'
                      subject: "${env.JOB_NAME} - (${env.BUILD_NUMBER}) Successfuly"
-                     body: "APP building SUCCESSFUL!, see console output at ${env.BUILD_URL} to view the results"
+                     body: """APP building SUCCESSFUL!, see console output at ${env.BUILD_URL} to view the results"""
                 
             }                
         }
