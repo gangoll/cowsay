@@ -104,9 +104,9 @@ pipeline {
 
         failure{  
             script{   
-                           mail to: 'gangoll1992@gmail.com'
+                           mail to: 'gangoll1992@gmail.com',
                            subject: "${env.JOB_NAME} - (${env.BUILD_NUMBER}) FAILED",
-                           body: "APP building FAIL!, Check console output at ${env.BUILD_URL} to view the results",
+                           body: "APP building FAIL!, Check console output at ${env.BUILD_URL} to view the results"
             }
         }
     } 
