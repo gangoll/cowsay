@@ -56,32 +56,32 @@ pipeline {
              }}
         }
         
-        // stage('deploy')
-        // {
+        stage('deploy')
+        {
 
-        // when {
+        when {
 
-        //             expression {BRANCH_NAME =~ /^(master$| release\/*)/ || commit == "test"
-        //             }
-        // }
-        // steps
-        // {
+                    expression {BRANCH_NAME =~ /^(master$| release\/*)/ || commit == "test"
+                    }
+        }
+        steps
+        {
 
-        //   script{       
+          script{       
               
-        //              dir('cowsay')  {
-        //                 echo "depploying..."
-        //                 sh "cp /home/ubuntu/access_code ."
-        //                 sh "cp /home/ubuntu/key.pem ."
-        //                 sh "./rep.sh"
-        //                 sh "terraform init || true"
-        //                sh "terraform destroy --auto-approve || true"
-        //             //    sh "terraform apply --auto-approve"
+                     dir('cowsay')  {
+                        echo "depploying..."
+                        sh "cp /home/ubuntu/access_code ."
+                        sh "cp /home/ubuntu/key.pem ."
+                        sh "./rep.sh"
+                        sh "terraform init || true"
+                       sh "terraform destroy --auto-approve || true"
+                       sh "terraform apply --auto-approve"
 
                     
-        //                  }}
-        // }
-        // }
+                         }}
+        }
+        }
     }
 
     post {
