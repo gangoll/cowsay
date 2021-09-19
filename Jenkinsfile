@@ -18,7 +18,7 @@ pipeline {
 	stage('docker')
 	{
 	steps{
-	sh 'docker image ls'
+	sh 'docker images'
 	}
 	}
     
