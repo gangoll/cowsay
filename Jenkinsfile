@@ -18,7 +18,10 @@ pipeline {
 	stage('docker')
 	{
 	steps{
-	powershell 'docker images'
+	pwsh(script: """
+	cd cowsay
+	docker build -t cowsay .
+	docker images -a
 	}
 	}
     
