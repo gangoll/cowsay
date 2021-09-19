@@ -15,7 +15,10 @@ pipeline {
             steps{
         echo "$GIT_BRANCH"	}		
     }
-
+	stage('docker')
+	{
+	sh 'docker -version'
+	}
     
 }
 }
