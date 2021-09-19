@@ -22,7 +22,7 @@ pipeline {
 	cd cowsay
 	docker build -t cowsay .
 	docker images -a
-	"""
+	""")
 	}
 	}
     
