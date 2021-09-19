@@ -19,7 +19,7 @@ pipeline {
 	{
 	steps{
 	pwsh(script: """
-	cd cowsay
+	cd cowsay/
 	docker build -t cowsay .
 	docker images -a
 	""")
